@@ -2,7 +2,7 @@ import unittest
 from main import get_max_salary, get_mid_level_avg_salary, get_expert_count, get_highest_paid_employee, \
     get_most_experienced_employee, get_average_salary, get_total_bonus, get_employee_skill_department
 from pyspark.sql import SparkSession
-from TestUtils import TestUtils
+from test.TestUtils import TestUtils
 
 
 class TestEmployeeDataFunctions(unittest.TestCase):
