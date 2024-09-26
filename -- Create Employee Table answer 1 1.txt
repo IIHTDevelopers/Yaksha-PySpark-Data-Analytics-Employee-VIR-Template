@@ -1,0 +1,77 @@
+-- Create Employee Table
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    DepartmentID INT,
+    HireDate VARCHAR(50)
+);
+
+-- Insert data into Employee Table
+INSERT INTO Employee (EmployeeID, Name, DepartmentID, HireDate) VALUES
+(1, 'Alice Smith', 101, '2020-01-15'),
+(2, 'Bob Johnson', 102, '2019-03-22'),
+(3, 'Carol Davis', 103, '2021-07-30'),
+(4, 'David Brown', 101, '2018-11-12'),
+(5, 'Eve White', 104, '2022-06-01'),
+(6, 'Frank Green', 105, '2019-08-17'),
+(7, 'Grace Taylor', 102, '2020-05-19'),
+(8, 'Hank Wilson', 103, '2021-09-09');
+
+-- Create Skills Table
+CREATE TABLE Skills (
+    SkillID INT PRIMARY KEY,
+    SkillName VARCHAR(50),
+    EmployeeID INT,
+    ProficiencyLevel VARCHAR(20),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+);
+
+-- Insert data into Skills Table
+INSERT INTO Skills (SkillID, SkillName, EmployeeID, ProficiencyLevel) VALUES
+(1, 'Python', 1, 'Expert'),
+(2, 'SQL', 2, 'Intermediate'),
+(3, 'JavaScript', 3, 'Advanced'),
+(4, 'Java', 4, 'Expert'),
+(5, 'Excel', 5, 'Beginner'),
+(6, 'Cloud Computing', 6, 'Advanced'),
+(7, 'Data Analysis', 7, 'Intermediate'),
+(8, 'Cybersecurity', 8, 'Expert');
+
+-- Create Experience and Salary Table
+CREATE TABLE ExperienceSalary (
+    EmployeeID INT PRIMARY KEY,
+    YearsOfExperience INT,
+    Salary DECIMAL(10, 2),
+    Bonus DECIMAL(10, 2),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+);
+
+-- Insert data into Experience and Salary Table
+INSERT INTO ExperienceSalary (EmployeeID, YearsOfExperience, Salary, Bonus) VALUES
+(1, 5, 80000.00, 5000.00),
+(2, 7, 85000.00, 6000.00),
+(3, 3, 70000.00, 4000.00),
+(4, 10, 95000.00, 8000.00),
+(5, 2, 65000.00, 3000.00),
+(6, 8, 90000.00, 7000.00),
+(7, 6, 75000.00, 4500.00),
+(8, 4, 72000.00, 3500.00);
+
+-- Create Department Table
+CREATE TABLE Department (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50),
+    ManagerID INT,
+    Location VARCHAR(50)
+);
+
+-- Insert data into Department Table
+INSERT INTO Department (DepartmentID, DepartmentName, ManagerID, Location) VALUES
+(101, 'IT', 1, 'New York'),
+(102, 'HR', 2, 'San Francisco'),
+(103, 'Marketing', 3, 'Chicago'),
+(104, 'Finance', 4, 'Boston'),
+(105, 'Operations', 5, 'Seattle'),
+(106, 'Sales', 6, 'Austin'),
+(107, 'Legal', 7, 'Denver'),
+(108, 'R&D', 8, 'Miami');
