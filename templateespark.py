@@ -7,9 +7,9 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # MySQL database connection details
-url = "jdbc:mysql://localhost:3306/employeedetails1?useSSL=false"
+url = "jdbc:mysql://localhost:3306/employeedetails?useSSL=false"
 user = "root"
-password = "admin"
+password = "pass@word1"
 
 # Directly load the tables from MySQL without caching
 employee_df = spark.read.format("jdbc") \
